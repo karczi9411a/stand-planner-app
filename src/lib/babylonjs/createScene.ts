@@ -28,7 +28,5 @@ export const createScene = (canvas: HTMLCanvasElement) => {
 		engine.resize();
 	});
 
-	engine.resize();
-
 	return scene;
 };

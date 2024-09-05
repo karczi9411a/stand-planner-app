@@ -13,3 +13,9 @@
 	font-family: var(--font-body);
 	color: var(--color-text);
 }
+
+.gutter {
+	background-color: #eee;
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
