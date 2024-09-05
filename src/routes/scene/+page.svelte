@@ -9,7 +9,6 @@
 		project = new Project(canvas);
 		project.setup();
 		project.run();
-		project.engine.resize();
 	});
 </script>
 

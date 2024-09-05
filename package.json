@@ -31,7 +31,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@babylonjs/core": "^7.23.0",
+		"babylonjs": "^7.24.0",
 		"split.js": "^1.6.5"
 	}
 }

@@ -1,36 +1,35 @@
 <script lang="ts">
-	import Split from 'split.js';
-	import { onMount } from 'svelte';
-	import FooterScene from './components/footer-scene.svelte';
-	import HeaderScene from './components/header-scene.svelte';
+	// import Split from 'split.js';
+	// import { onMount } from 'svelte';
 
-	let left: HTMLElement;
-	let right: HTMLElement;
+	// let left: HTMLElement;
+	// let right: HTMLElement;
 
-	onMount(() => {
-		Split([left, right], {
-			sizes: [1, 99],
-			elementStyle: function (dimension, size, gutterSize) {
-				return {
-					width: 'calc(' + size + '% - ' + gutterSize + 'px)'
-				};
-			},
-			gutterStyle: function (dimension, gutterSize) {
-				return {
-					width: gutterSize + 'px'
-				};
-			}
-		});
-	});
+	// onMount(() => {
+	// 	Split([left, right], {
+	// 		elementStyle: function (dimension, size, gutterSize) {
+	// 			return {
+	// 				width: 'calc(' + size + '% - ' + gutterSize + 'px)'
+	// 			};
+	// 		},
+	// 		gutterStyle: function (dimension, gutterSize) {
+	// 			return {
+	// 				width: gutterSize + 'px'
+	// 			};
+	// 		}
+	// 	});
+	// });
 </script>
 
-<main>
+<!-- <main>
 	<HeaderScene />
 	<div class="scene-body">
 		<slot />
 	</div>
 	<FooterScene />
-</main>
+</main> -->
+
+<slot />
 
 <style>
 	main {
