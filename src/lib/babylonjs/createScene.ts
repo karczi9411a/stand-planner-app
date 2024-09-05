@@ -1,4 +1,4 @@
-import { Engine, ArcRotateCamera, HemisphericLight, Mesh, Scene, Vector3 } from '@babylonjs/core';
+import { ArcRotateCamera, Engine, HemisphericLight, Mesh, Scene, Vector3 } from '@babylonjs/core';
 
 export const createScene = (canvas: HTMLCanvasElement) => {
 	const engine = new Engine(canvas);
@@ -24,9 +24,11 @@ export const createScene = (canvas: HTMLCanvasElement) => {
 		scene.render();
 	});
 
-	// window.addEventListener('resize', function () {
-	// 	engine.resize();
-	// });
+	window.addEventListener('resize', function () {
+		engine.resize();
+	});
+
+	engine.resize();
 
 	return scene;
 };
