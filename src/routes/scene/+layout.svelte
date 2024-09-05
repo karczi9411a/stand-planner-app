@@ -1,38 +1,49 @@
 <script lang="ts">
-	// import Split from 'split.js';
-	// import { onMount } from 'svelte';
+	import FooterScene from './components/footer-scene.svelte';
+	import HeaderScene from './components/header-scene.svelte';
 
-	// let left: HTMLElement;
-	// let right: HTMLElement;
+	import Split from 'split.js';
+	import { onMount } from 'svelte';
 
-	// onMount(() => {
-	// 	Split([left, right], {
-	// 		elementStyle: function (dimension, size, gutterSize) {
-	// 			return {
-	// 				width: 'calc(' + size + '% - ' + gutterSize + 'px)'
-	// 			};
-	// 		},
-	// 		gutterStyle: function (dimension, gutterSize) {
-	// 			return {
-	// 				width: gutterSize + 'px'
-	// 			};
-	// 		}
-	// 	});
-	// });
+	let left: HTMLElement;
+	let right: HTMLElement;
+
+	onMount(() => {
+		Split([left, right], {
+			elementStyle: function (dimension, size, gutterSize) {
+				return {
+					width: 'calc(' + size + '% - ' + gutterSize + 'px)'
+				};
+			},
+			gutterStyle: function (dimension, gutterSize) {
+				return {
+					width: gutterSize + 'px'
+				};
+			}
+		});
+	});
 </script>
 
-<!-- <main>
+<main class="pg-root">
 	<HeaderScene />
-	<div class="scene-body">
-		<slot />
+	<div class="pg-split">
+		<div bind:this={left}>left</div>
+		<div class="canvasZone" bind:this={right}>
+			<slot />
+		</div>
 	</div>
 	<FooterScene />
-</main> -->
-
-<slot />
+</main>
 
 <style>
-	main {
+	.canvasZone {
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	.pg-root {
 		width: 100%;
 		height: 100%;
 		padding: 0;
@@ -45,14 +56,14 @@
 		grid-template-rows: 55px calc(100% - 90px) 35px;
 	}
 
-	.scene-body {
+	.pg-split {
 		width: 100%;
 		height: 100%;
 		padding: 0;
 		margin: 0;
 		display: flex;
 		grid-row: 2;
-		grid-column: 1/3;
+		grid-column: 1 / 3;
 		overflow: hidden;
 		height: 100%;
 	}

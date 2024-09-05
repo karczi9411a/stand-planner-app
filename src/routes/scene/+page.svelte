@@ -12,18 +12,9 @@
 	});
 </script>
 
-<div class="canvasZone">
-	<canvas bind:this={canvas}></canvas>
-</div>
+<canvas bind:this={canvas}></canvas>
 
 <style>
-	.canvasZone {
-		width: 100%;
-		height: 100%;
-		padding: 0;
-		margin: 0;
-	}
-
 	canvas {
 		width: 100%;
 		height: 100%;
