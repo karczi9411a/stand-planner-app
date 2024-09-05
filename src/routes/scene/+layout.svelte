@@ -1,16 +1,33 @@
 <script lang="ts">
+	import Split from 'split.js';
+	import { onMount } from 'svelte';
 	import FooterScene from './components/footer-scene.svelte';
 	import HeaderScene from './components/header-scene.svelte';
-	import LeftNavbarScene from './components/left-navbar-scene.svelte';
-	import RightNavbarScene from './components/right-navbar-scene.svelte';
+
+	let left: HTMLElement;
+	let right: HTMLElement;
+
+	onMount(() => {
+		Split([left, right], {
+			sizes: [1, 99],
+			elementStyle: function (dimension, size, gutterSize) {
+				return {
+					width: 'calc(' + size + '% - ' + gutterSize + 'px)'
+				};
+			},
+			gutterStyle: function (dimension, gutterSize) {
+				return {
+					width: gutterSize + 'px'
+				};
+			}
+		});
+	});
 </script>
 
 <main>
 	<HeaderScene />
 	<div class="scene-body">
-		<LeftNavbarScene />
 		<slot />
-		<RightNavbarScene />
 	</div>
 	<FooterScene />
 </main>
@@ -27,8 +44,6 @@
 		display: grid;
 		grid-template-columns: auto 1fr;
 		grid-template-rows: 55px calc(100% - 90px) 35px;
-		/* display: flex;
-		min-height: 100vh; */
 	}
 
 	.scene-body {

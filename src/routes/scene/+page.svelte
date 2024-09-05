@@ -1,16 +1,20 @@
 <script lang="ts">
-	import { createScene } from '$lib/babylonjs/createScene';
+	import Project from '$lib/classes/project';
 	import { onMount } from 'svelte';
 
-	let _canvas: HTMLCanvasElement;
+	let canvas: HTMLCanvasElement;
+	let project: Project;
 
 	onMount(() => {
-		createScene(_canvas);
+		project = new Project(canvas);
+		project.setup();
+		project.run();
+		project.engine.resize();
 	});
 </script>
 
 <div class="canvasZone">
-	<canvas bind:this={_canvas}></canvas>
+	<canvas bind:this={canvas}></canvas>
 </div>
 
 <style>
