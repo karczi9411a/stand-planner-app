@@ -34,16 +34,13 @@ export default class Project {
 		BABYLON.MeshBuilder.CreateSphere('Sphere', { diameter: 1 });
 
 		window.addEventListener('resize', () => {
-			if (this.canvas.parentElement) {
-				// this.canvas.width = width;
-				// this.canvas.height = height;
-			}
-
 			this.engine.resize();
 		});
 	}
 
 	run() {
-		this.engine.runRenderLoop(() => this.scene.render());
+		this.engine.runRenderLoop(() => {
+			this.scene.render();
+		});
 	}
 }
