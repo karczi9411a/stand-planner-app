@@ -1,11 +1,5 @@
-<script lang="ts">
+<script>
 	import '../app.css';
 </script>
 
-<slot />
-
-<style>
-	:root {
-		--header-height: 3.5rem;
-	}
-</style>
+<slot/>
