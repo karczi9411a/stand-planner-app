@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { Button } from "flowbite-svelte";
-
+	import { Button } from 'flowbite-svelte';
 </script>
 
 <div class="catalog-nav">
-	<Button>1</Button><button>2</button><button>3</button><button>4</button><button>5</button>
+	<Button>Circle</Button><Button>Cube</Button>
 </div>
 
 <style>
@@ -14,10 +13,6 @@
 		transform: translateY(-50%);
 		margin-left: var(--editor-margin);
 		display: grid;
-	}
-
-	button {
-		width: 4rem;
-		height: 4rem;
+		gap: 0.5rem;
 	}
 </style>
