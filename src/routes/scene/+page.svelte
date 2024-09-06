@@ -1,25 +1,32 @@
 <script lang="ts">
 	import Project from '$lib/classes/project';
+	import Loading from '$lib/components/Loading.svelte';
 	import { onMount } from 'svelte';
+	import Editor from './components/editor.svelte';
 
 	let canvas: HTMLCanvasElement;
 	let project: Project;
+	let isSceneReady = false;
 
 	onMount(() => {
 		project = new Project(canvas);
 
-		project.scene.executeWhenReady(() => {
-			console.log('ready scene!');
-		});
 		project.setup();
 		project.run();
+
+		project.scene.executeWhenReady(() => {
+			isSceneReady = true;
+		});
 	});
 </script>
 
-<div class="pg-split">
-	<div class="editor">
-		<canvas bind:this={canvas}></canvas>
-	</div>
+{#if !isSceneReady}
+	<Loading />
+{/if}
+
+<div class="editor">
+	<Editor />
+	<canvas bind:this={canvas}></canvas>
 </div>
 
 <style>
@@ -29,7 +36,6 @@
 		top: var(--header-height);
 		padding: 0;
 		margin: 0;
-		background-color: aqua;
 		position: absolute;
 	}
 

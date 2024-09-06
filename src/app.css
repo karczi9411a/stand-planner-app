@@ -12,7 +12,6 @@
 	--color-text: rgba(0, 0, 0, 0.7);
 	font-family: var(--font-body);
 	color: var(--color-text);
-	--header-height: 3.5rem;
 }
 
 .gutter {
