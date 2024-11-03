@@ -5,8 +5,8 @@
 	import Editor from './components/editor.svelte';
 
 	let canvas: HTMLCanvasElement;
-	let project: Project;
-	let isSceneReady = false;
+	let project: Project | undefined = $state();
+	let isSceneReady = $state(false);
 
 	onMount(() => {
 		project = new Project(canvas);

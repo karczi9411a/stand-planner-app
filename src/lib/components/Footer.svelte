@@ -1,27 +1,39 @@
-<footer>
-	<p>
-		&copy; 2024. All rights reserved by <a href="mailto:karol.zurek.94@gmail.com"
-			>karol.zurek.94@gmail.com</a
+<script>
+	import {
+		Footer,
+		FooterBrand,
+		FooterLinkGroup,
+		FooterLink,
+		FooterCopyright,
+		FooterIcon,
+		DropdownDivider
+	} from 'flowbite-svelte';
+</script>
+
+<hr class="solid" />
+<Footer footerType="socialmedia">
+	<div class="mx-auto max-w-screen-xl text-center">
+		<FooterBrand
+			href="https://flowbite.com"
+			src="/images/logo.svg"
+			alt="Flowbite Logo"
+			name="Flowbite"
+			aClass="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white"
+		/>
+		<p class="my-6 text-gray-500 dark:text-gray-400">
+			Open-source library of over 400+ web components and interactive elements built for better web.
+		</p>
+		<FooterLinkGroup
+			ulClass="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white"
 		>
-	</p>
-</footer>
-
-<style>
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
-</style>
+			<FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">About</FooterLink>
+			<FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">Premium</FooterLink>
+			<FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">FAQs</FooterLink>
+			<FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">Contact</FooterLink>
+		</FooterLinkGroup>
+		<span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+			>© 2021-2022 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All
+			Rights Reserved.</span
+		>
+	</div>
+</Footer>

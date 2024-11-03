@@ -1,14 +1,15 @@
 <script lang="ts">
 	import HeaderScene from './components/header-scene.svelte';
+	let { children } = $props();
 </script>
 
 <main>
 	<HeaderScene />
-	<slot />
+	{@render children?.()}
 </main>
 
 <style>
-	:root{
+	:root {
 		--header-height: 3.5rem;
 	}
 </style>
