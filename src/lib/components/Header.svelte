@@ -11,7 +11,7 @@
 	} from 'flowbite-svelte';
 </script>
 
-<Navbar class="sticky left-0 top-0 z-50">
+<Navbar class="sticky left-0 top-0 z-50" fluid>
 	<NavBrand href="/">
 		<img src="/images/logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
 		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span
