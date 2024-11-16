@@ -5,14 +5,22 @@
 	let { children } = $props();
 </script>
 
-<div class="app">
-	<Header />
-	<main class="flex flex-auto">
-		<Sidebar asideClass="border-box" />
+<Header />
+<div class="flex min-h-screen">
+	<Sidebar />
+	<main class="flex-auto">
 		{@render children?.()}
 	</main>
-	<Footer />
 </div>
+
+<!-- <Sidebar />
+	<div class="sm:ml-64">
+		<Header />
+		<main class="flex flex-auto">
+			{@render children?.()}
+		</main>
+		<Footer />
+	</div> -->
 
 <style>
 	.app {

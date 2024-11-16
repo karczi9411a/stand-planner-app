@@ -8,26 +8,32 @@
 		SidebarDropdownWrapper
 	} from 'flowbite-svelte';
 	import {
-		ChartPieSolid,
 		GridSolid,
 		CartSolid,
 		MailBoxSolid,
 		UserSolid,
 		ArrowRightToBracketOutline,
-		EditOutline
+		EditOutline,
+		HomeSolid,
+		PlaySolid
 	} from 'flowbite-svelte-icons';
 	let spanClass = 'flex-1 ms-3 whitespace-nowrap';
-	let { asideClass }: { asideClass?: string } = $props();
+	import { page } from '$app/stores';
+	let activeUrl = $state($page.url.pathname);
+	// let { sidebarClass }: { sidebarClass?: string } = $props();
 </script>
 
-<Sidebar {asideClass}>
-	<SidebarWrapper>
+<Sidebar {activeUrl}>
+	<SidebarWrapper divClass="h-full p-4">
 		<SidebarGroup>
-			<SidebarItem label="Dashboard" href="/side2">
+			<SidebarItem label="Home" href="/">
 				<svelte:fragment slot="icon">
-					<ChartPieSolid
-						class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-					/>
+					<HomeSolid />
+				</svelte:fragment>
+			</SidebarItem>
+			<SidebarItem label="Editor" href="/editor">
+				<svelte:fragment slot="icon">
+					<PlaySolid />
 				</svelte:fragment>
 			</SidebarItem>
 			<SidebarDropdownWrapper label="E-commerce">
