@@ -10,6 +10,7 @@
 	<Sidebar />
 	<main class="flex-auto">
 		{@render children?.()}
+		<Footer />
 	</main>
 </div>
 

@@ -46,7 +46,7 @@
 				<SidebarDropdownItem label="Billing" />
 				<SidebarDropdownItem label="Invoice" />
 			</SidebarDropdownWrapper>
-			<SidebarItem label="Kanban" {spanClass}>
+			<SidebarItem label="Kanban" {spanClass} href="/test">
 				<svelte:fragment slot="icon">
 					<GridSolid
 						class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
