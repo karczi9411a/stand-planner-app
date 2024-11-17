@@ -8,7 +8,7 @@
 <Header />
 <div class="flex min-h-screen">
 	<Sidebar />
-	<main class="flex-auto">
+	<main class="w-full flex-auto">
 		{@render children?.()}
 		<Footer />
 	</main>

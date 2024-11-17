@@ -19,8 +19,7 @@
 	} from 'flowbite-svelte-icons';
 	let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 	import { page } from '$app/stores';
-	let activeUrl = $state($page.url.pathname);
-	// let { sidebarClass }: { sidebarClass?: string } = $props();
+	let activeUrl = $derived($page.url.pathname);
 </script>
 
 <Sidebar {activeUrl}>
@@ -46,7 +45,7 @@
 				<SidebarDropdownItem label="Billing" />
 				<SidebarDropdownItem label="Invoice" />
 			</SidebarDropdownWrapper>
-			<SidebarItem label="Kanban" {spanClass} href="/test">
+			<SidebarItem label="Kanban" {spanClass} href="/side">
 				<svelte:fragment slot="icon">
 					<GridSolid
 						class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
