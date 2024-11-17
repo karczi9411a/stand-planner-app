@@ -23,7 +23,7 @@
 </script>
 
 <Sidebar {activeUrl}>
-	<SidebarWrapper divClass="h-full p-4">
+	<SidebarWrapper divClass="h-full p-4 fixed">
 		<SidebarGroup>
 			<SidebarItem label="Home" href="/">
 				<svelte:fragment slot="icon">
